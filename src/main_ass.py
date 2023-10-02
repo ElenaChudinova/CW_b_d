@@ -11,12 +11,12 @@ number_card_cod = number_card_cod(all_operations)
 number_check_cod = number_check_cod(all_operations)
 
 
-# for i in last_operations:
-#     print(date_operations.get("date"), i['description'],'\n', number_card_cod.get("from"), '->', number_check_cod.get("to"), '\n', i['operationAmount']['amount'], i['operationAmount']['currency']['name'])
-#     print()
+for i in last_operations:
+    print(date_operations.get("date"), i['description'],'\n', number_card_cod.get("from"), '->', number_check_cod.get("to"), '\n', i['operationAmount']['amount'], i['operationAmount']['currency']['name'])
+    print()
 
 
-print(number_card_cod)
+
 
 
 
