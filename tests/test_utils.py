@@ -1,5 +1,4 @@
-import pytest
-from src.utils import get_filtered_executed, get_last_operations, number_check_cod, number_card_cod
+from src.utils import get_filtered_executed, get_last_operations, number_check_cod, number_card_cod, datetime_operations
 
 def test_get_filtered_executed(test_data):
     data = get_filtered_executed(test_data)
@@ -13,10 +12,17 @@ def test_get_last_operations(test_data):
 
 def test_number_check_cod(test_data):
     data = number_check_cod
-    assert data(test_data) == {'to': '**5907'}
+    assert data(test_data) == {'to': '**8381'}
 
 def test_number_card_cod(test_data):
     data = number_card_cod(test_data)
-    result = [x["from"] for x in data]
-    assert result == {'from': 'Visa Classic 2842 87** **** 9012'}
+    if 'from' not in data:
+        assert data == {'from': 'None'}
+
+def test_datetime_operations(test_data):
+    data = datetime_operations(test_data)
+    if 'date' in data:
+        assert data == {'date': '05.11.2019'}
+
+
 

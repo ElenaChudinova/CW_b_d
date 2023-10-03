@@ -5,7 +5,7 @@ def load_operations():
     # Функция загружает список банковских операций из файла JSON
     with open('operations.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
-    return data
+        return data
 
 def get_filtered_executed(operations):
     '''Функция получает словарь с данными по выполненным банковским операциям.
@@ -26,8 +26,7 @@ def datetime_operations(data):
     for i in data:
         date = datetime.datetime.strptime(i['date'], "%Y-%m-%dT%H:%M:%S.%f").strftime("%d.%m.%Y")
         datetime_["date"] = date
-        return datetime_
-
+    return datetime_
 
 def number_card_cod(data):
     # Функция зашифровывает номер карты в формат: Visa Platinum 7000 79** **** 6361)
@@ -50,4 +49,4 @@ def number_check_cod(data):
     for i in data:
         check = i["to"]
         check_cod["to"] = (("*" * (len(check) -4) + check[-4:])[19:])
-        return check_cod
+    return check_cod

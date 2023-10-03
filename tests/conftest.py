@@ -1,8 +1,9 @@
 import pytest
 
+
 @pytest.fixture
 def test_data():
-    return [ {'id': 863064926,
+    return [{'id': 863064926,
              'state': 'EXECUTED',
              'date': '2019-12-08T22:46:21.935582',
              'operationAmount':
