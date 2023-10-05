@@ -11,18 +11,26 @@ def test_get_last_operations(test_data):
 
 
 def test_number_check_cod(test_data):
-    data = number_check_cod
-    assert data(test_data) == {'to': '**8381'}
+    number_check_cod(test_data)
+    numbers = [x["to"] for x in test_data]
+    print(numbers)
+    assert numbers == ['Счет **5907', 'Счет **3655', 'Счет **2869', 'Счет **8125', 'Счет **8381']
+
 
 def test_number_card_cod(test_data):
-    data = number_card_cod(test_data)
-    if 'from' not in data:
-        assert data == {'from': 'None'}
+    number_card_cod(test_data)
+    numbers = [x["from"] for x in test_data]
+    print(numbers)
+    assert numbers == ['None', 'Visa Classic 2842 78** *** 9012', 'Maestro 7810 46** *** 5568', 'Счет 3861 43** *** 9794', 'None']
+
 
 def test_datetime_operations(test_data):
-    data = datetime_operations(test_data)
-    if 'date' in data:
-        assert data == {'date': '05.11.2019'}
+    datetime_operations(test_data)
+    numbers = [x["date"] for x in test_data]
+    print(numbers)
+    assert numbers == ['08.12.2019', '07.12.2019', '19.11.2019', '13.11.2019', '05.11.2019']
+
+
 
 
 
